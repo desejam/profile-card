@@ -85,20 +85,21 @@ body {
 
 .btn {
     border: none;
-    border-radius: 5px;
+    border-radius: 50%; /* Botões completamente redondos */
     padding: 10px; /* Ajuste o padding para ícones */
-    font-size: 18px; /* Tamanho dos ícones */
+    font-size: 16px; /* Tamanho dos ícones reduzido */
     cursor: pointer;
-    transition: opacity 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px; /* Largura fixa para os botões */
-    height: 40px; /* Altura fixa para os botões */
+    width: 36px; /* Largura reduzida */
+    height: 36px; /* Altura reduzida */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
 .btn:hover {
-    opacity: 0.9; /* Efeito de hover suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada no hover */
 }
 
 /* Cores personalizadas para cada botão */
