@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 300px;
+    text-align: center;
+    position: relative;
+}
+
+.banner {
+    background-image: url('https://i.pinimg.com/736x/63/41/1f/63411f35b7e1015bb4b6653c8a92b264.jpg'); /* Substitua pelo banner desejado */
+    background-size: cover;
+    height: 100px;
+}
+
+.icon {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 3px solid #fff;
+    position: absolute;
+    top: 60px; /* Ajuste para sobrepor o banner */
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url('https://i.pinimg.com/236x/10/aa/70/10aa7070fa47955fc28854ef18821946.jpg'); /* Substitua pelo ícone desejado */
+    background-size: cover;
+}
+
+.content {
+    padding: 60px 20px 20px; /* Ajuste o padding para acomodar o ícone */
+}
+
+.content h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.content h2 {
+    margin: 5px 0;
+    font-size: 18px;
+    background: linear-gradient(90deg, #007BFF, #00FF88); /* Gradiente azul para verde */
+    -webkit-background-clip: text; /* Aplica o gradiente ao texto */
+    -webkit-text-fill-color: transparent; /* Torna o texto transparente para mostrar o gradiente */
+}
+
+.content p {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.5;
+}
+
+.content .link {
+    font-size: 12px;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.content .link:hover {
+    text-decoration: underline;
+}
+
+.buttons {
+    display: flex;
+    gap: 8px; /* Espaçamento entre os botões */
+    justify-content: center; /* Centraliza os botões */
+    margin-top: 15px;
+    margin-bottom: 15px;
+    flex-wrap: nowrap; /* Impede que os botões quebrem para a próxima linha */
+    overflow-x: auto; /* Permite rolagem horizontal em telas pequenas */
+    padding-bottom: 5px; /* Espaço para a barra de rolagem */
+}
+
+.btn {
+    border: none;
+    border-radius: 5px;
+    padding: 10px; /* Ajuste o padding para ícones */
+    font-size: 18px; /* Tamanho dos ícones */
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Largura fixa para os botões */
+    height: 40px; /* Altura fixa para os botões */
+}
+
+.btn:hover {
+    opacity: 0.9; /* Efeito de hover suave */
+}
+
+/* Cores personalizadas para cada botão */
+.btn-orange {
+    background-color: #FFA500; /* Laranja */
+    color: #fff; /* Texto branco */
+}
+
+.btn-blue {
+    background-color: #007BFF; /* Azul */
+    color: #fff; /* Texto branco */
+}
+
+.btn-yellow {
+    background-color: #FFD700; /* Amarelo */
+    color: #000; /* Texto preto */
+}
+
+.btn-white {
+    background-color: #fff; /* Branco */
+    color: #000; /* Texto preto */
+    border: 1px solid #ccc; /* Borda para contraste */
+}
+
+/* Cor do ícone do React */
+.btn-white .fa-react {
+    color: #61DAFB; /* Azul claro do React */
+}
+
+/* Estilo da barra de rolagem (opcional) */
+.buttons::-webkit-scrollbar {
+    height: 6px;
+}
+
+.buttons::-webkit-scrollbar-thumb {
+    background-color: #007BFF;
+    border-radius: 3px;
+}
+
+.buttons::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+}
