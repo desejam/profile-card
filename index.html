@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matheus Fernandes</title>
+    <title>Matheus Fernandes - Spotify Player</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -20,8 +20,45 @@
                 <button class="btn btn-yellow"><i class="fab fa-js-square"></i></button>
                 <button class="btn btn-white"><i class="fab fa-react"></i></button>
             </div>
-            <a href="" class=""></a>
-        </div>
+
+            <!-- Player do Spotify -->
+            <div class="spotify-player">
+                <div class="album-art">
+                    <img id="album-art" src="https://via.placeholder.com/80" alt="Album Art">
+                </div>
+                <div class="track-info">
+                    <p id="track-name">Nenhuma música tocando</p>
+                    <p id="artist-name"></p>
+                </div>
     </div>
+
+    <script>
+        async function fetchSpotifyStatus() {
+            try {
+                const response = await fetch('http://localhost:3000/status?access_token=BQC5FjZpg5AKlmXlvmickSgBtCtbOQBgon57kzNeDgFVSUH4tHDxAjzoNeR9gkNKSmlT16RY_lE23zEt-qwGVhYuH7kD2YkzO0dCKKHiJKI0a1rlHfkKYzO6-O7tdL5hbR1IEkgnqBxX8_3PLkhYwNIsVOopBnlj2UY7wV93Tsmiftn0IWxVjPm2dW8ExhFQAlXEmFuY1VILBBpkIm3UjRRDzDh5h2snoshjr8U'); // Substitua pelo token de acesso
+                const data = await response.json();
+
+                if (data.is_playing) {
+                    const trackName = data.item.name;
+                    const artistName = data.item.artists.map(artist => artist.name).join(', ');
+                    const albumArt = data.item.album.images[0].url;
+
+                    document.getElementById('track-name').textContent = trackName;
+                    document.getElementById('artist-name').textContent = artistName;
+                    document.getElementById('album-art').src = albumArt;
+                } else {
+                    document.getElementById('track-name').textContent = 'Nenhuma música tocando';
+                    document.getElementById('artist-name').textContent = '';
+                    document.getElementById('album-art').src = 'https://via.placeholder.com/80';
+                }
+            } catch (error) {
+                console.error('Erro ao buscar status do Spotify:', error);
+            }
+        }
+
+        // Atualiza o status a cada 5 segundos
+        setInterval(fetchSpotifyStatus, 5000);
+        fetchSpotifyStatus(); // Busca o status inicial
+    </script>
 </body>
 </html>
