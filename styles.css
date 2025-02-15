@@ -21,7 +21,7 @@ body {
 }
 
 .banner {
-    background-image: url('https://i.pinimg.com/736x/63/41/1f/63411f35b7e1015bb4b6653c8a92b264.jpg'); /* Substitua pelo banner desejado */
+    background-image: url('https://i.pinimg.com/736x/63/41/1f/63411f35b7e1015bb4b6653c8a92b264.jpg');
     background-size: cover;
     height: 100px;
 }
@@ -33,15 +33,15 @@ body {
     background-color: #fff;
     border: 3px solid #fff;
     position: absolute;
-    top: 60px; /* Ajuste para sobrepor o banner */
+    top: 60px;
     left: 50%;
     transform: translateX(-50%);
-    background-image: url('https://i.pinimg.com/236x/10/aa/70/10aa7070fa47955fc28854ef18821946.jpg'); /* Substitua pelo ícone desejado */
+    background-image: url('https://i.pinimg.com/236x/10/aa/70/10aa7070fa47955fc28854ef18821946.jpg');
     background-size: cover;
 }
 
 .content {
-    padding: 60px 15px 20px; /* Ajuste o padding para acomodar o ícone */
+    padding: 60px 15px 20px;
 }
 
 .content h1 {
@@ -53,9 +53,9 @@ body {
 .content h2 {
     margin: 5px 0;
     font-size: 18px;
-    background: linear-gradient(90deg, #007BFF, #00FF88); /* Gradiente azul para verde */
-    -webkit-background-clip: text; /* Aplica o gradiente ao texto */
-    -webkit-text-fill-color: transparent; /* Torna o texto transparente para mostrar o gradiente */
+    background: linear-gradient(90deg, #007BFF, #00FF88);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .content p {
@@ -76,63 +76,60 @@ body {
 
 .buttons {
     display: flex;
-    gap: 8px; /* Espaçamento entre os botões */
-    justify-content: center; /* Centraliza os botões */
+    gap: 8px;
+    justify-content: center;
     margin-top: 15px;
     margin-bottom: 15px;
-    flex-wrap: nowrap; /* Impede que os botões quebrem para a próxima linha */
-    overflow-x: auto; /* Permite rolagem horizontal em telas pequenas */
-    padding-bottom: 5px; /* Espaço para a barra de rolagem */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 5px;
 }
 
 .btn {
     border: none;
-    border-radius: 50%; /* Botões completamente redondos */
-    padding: 10px; /* Ajuste o padding para ícones */
-    font-size: 16px; /* Tamanho dos ícones reduzido */
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 16px;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px; /* Largura reduzida */
-    height: 36px; /* Altura reduzida */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .btn:hover {
-    transform: scale(1.1); /* Efeito de zoom no hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada no hover */
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Cores personalizadas para cada botão */
 .btn-orange {
-    background-color: #FFA500; /* Laranja */
-    color: #fff; /* Texto branco */
+    background-color: #FFA500;
+    color: #fff;
 }
 
 .btn-blue {
-    background-color: #007BFF; /* Azul */
-    color: #fff; /* Texto branco */
+    background-color: #007BFF;
+    color: #fff;
 }
 
 .btn-yellow {
-    background-color: #FFD700; /* Amarelo */
-    color: #000; /* Texto preto */
+    background-color: #FFD700;
+    color: #000;
 }
 
 .btn-white {
-    background-color: #fff; /* Branco */
-    color: #000; /* Texto preto */
-    border: 1px solid #ccc; /* Borda para contraste */
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ccc;
 }
 
-/* Cor do ícone do React */
 .btn-white .fa-react {
-    color: #61DAFB; /* Azul claro do React */
+    color: #61DAFB;
 }
 
-/* Estilo da barra de rolagem (opcional) */
 .buttons::-webkit-scrollbar {
     height: 6px;
 }
@@ -146,12 +143,11 @@ body {
     background-color: #f0f0f0;
 }
 
-/* Estilo para o player do Spotify */
 .spotify-player {
     display: flex;
     align-items: center;
     gap: 25px;
-    background: white; /* Cor de fundo escura do Spotify */
+    background: white;
     border-radius: 8px;
     padding: 10px;
     box-shadow: 0 4px 8px rgb(255, 255, 255);
@@ -205,5 +201,5 @@ body {
 }
 
 .control-btn:hover {
-    color: #1DB954; /* Verde do Spotify */
+    color: #1DB954;
 }
