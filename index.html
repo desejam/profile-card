@@ -35,7 +35,7 @@
     <script>
         async function fetchSpotifyStatus() {
             try {
-                const response = await fetch('http://localhost:3000/status?access_token=BQC5FjZpg5AKlmXlvmickSgBtCtbOQBgon57kzNeDgFVSUH4tHDxAjzoNeR9gkNKSmlT16RY_lE23zEt-qwGVhYuH7kD2YkzO0dCKKHiJKI0a1rlHfkKYzO6-O7tdL5hbR1IEkgnqBxX8_3PLkhYwNIsVOopBnlj2UY7wV93Tsmiftn0IWxVjPm2dW8ExhFQAlXEmFuY1VILBBpkIm3UjRRDzDh5h2snoshjr8U'); // Substitua pelo token de acesso
+                const response = await fetch('http://localhost:3000/status?access_token=BQAXGdOWb7C7mHQTZP-LYxhyXsztIv-SZGMg50Eg6jkqlrt0hu43q194sazOp0OfIf-F-xMexzLVARWohNK1_kOpvo-fzg46gY4yLZrGbCF8T7fZq3JSVYZvb-cZ27dfjNxcb5bVdqRE7hz0_vcZPUGUzWYVPjtVEGwVU3BAT9Z2jFm-D-QLVlsKF7_S6FogzEkBCR7EKMfny7RZYNlT6BWq88fBPQnBRaCxw5g'); // Substitua pelo token de acesso
                 const data = await response.json();
 
                 if (data.is_playing) {
@@ -47,9 +47,9 @@
                     document.getElementById('artist-name').textContent = artistName;
                     document.getElementById('album-art').src = albumArt;
                 } else {
-                    document.getElementById('track-name').textContent = 'Nenhuma música tocando';
+                    document.getElementById('track-name').textContent = 'codando';
                     document.getElementById('artist-name').textContent = '';
-                    document.getElementById('album-art').src = 'https://via.placeholder.com/80';
+                    document.getElementById('album-art').src = 'https://i.pinimg.com/236x/d2/c6/d5/d2c6d5f1c03bb5421b0224ac507bcd2a.jpg';
                 }
             } catch (error) {
                 console.error('Erro ao buscar status do Spotify:', error);
