@@ -20,8 +20,6 @@
                 <button class="btn btn-yellow"><i class="fab fa-js-square"></i></button>
                 <button class="btn btn-white"><i class="fab fa-react"></i></button>
             </div>
-
-            <!-- Player do Spotify -->
             <div class="spotify-player">
                 <div class="album-art">
                     <img id="album-art" src="https://via.placeholder.com/80" alt="Album Art">
@@ -30,19 +28,18 @@
                     <p id="track-name">Nenhuma música tocando</p>
                     <p id="artist-name"></p>
                 </div>
+            </div>
+        </div>
     </div>
-
     <script>
         async function fetchSpotifyStatus() {
             try {
-                const response = await fetch('http://localhost:3000/status?access_token=BQAXGdOWb7C7mHQTZP-LYxhyXsztIv-SZGMg50Eg6jkqlrt0hu43q194sazOp0OfIf-F-xMexzLVARWohNK1_kOpvo-fzg46gY4yLZrGbCF8T7fZq3JSVYZvb-cZ27dfjNxcb5bVdqRE7hz0_vcZPUGUzWYVPjtVEGwVU3BAT9Z2jFm-D-QLVlsKF7_S6FogzEkBCR7EKMfny7RZYNlT6BWq88fBPQnBRaCxw5g'); // Substitua pelo token de acesso
+                const response = await fetch('http://localhost:3000/status?access_token=BQAXGdOWb7C7mHQTZP-LYxhyXsztIv-SZGMg50Eg6jkqlrt0hu43q194sazOp0OfIf-F-xMexzLVARWohNK1_kOpvo-fzg46gY4yLZrGbCF8T7fZq3JSVYZvb-cZ27dfjNxcb5bVdqRE7hz0_vcZPUGUzWYVPjtVEGwVU3BAT9Z2jFm-D-QLVlsKF7_S6FogzEkBCR7EKMfny7RZYNlT6BWq88fBPQnBRaCxw5g');
                 const data = await response.json();
-
                 if (data.is_playing) {
                     const trackName = data.item.name;
                     const artistName = data.item.artists.map(artist => artist.name).join(', ');
                     const albumArt = data.item.album.images[0].url;
-
                     document.getElementById('track-name').textContent = trackName;
                     document.getElementById('artist-name').textContent = artistName;
                     document.getElementById('album-art').src = albumArt;
@@ -55,10 +52,8 @@
                 console.error('Erro ao buscar status do Spotify:', error);
             }
         }
-
-        // Atualiza o status a cada 5 segundos
         setInterval(fetchSpotifyStatus, 5000);
-        fetchSpotifyStatus(); // Busca o status inicial
+        fetchSpotifyStatus();
     </script>
 </body>
 </html>
